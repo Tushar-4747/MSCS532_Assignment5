@@ -19,3 +19,13 @@ def randomized_quicksort(arr, low, high):
         pi = random_partition(arr, low, high)
         randomized_quicksort(arr, low, pi - 1)
         randomized_quicksort(arr, pi + 1, high)
+def randomized_sort(arr):
+    randomized_quicksort(arr, 0, len(arr) - 1)
+    return arr
+
+if __name__ == "__main__":
+
+    test_arr = [64, 34, 25, 12, 22, 11, 90]
+    print("Original array:", test_arr)
+    sorted_arr = randomized_sort(test_arr.copy())
+    print("Sorted array:", sorted_arr)
